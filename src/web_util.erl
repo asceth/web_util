@@ -58,7 +58,7 @@ contains(Key, []) ->
 contains(Key, List) ->
   lists:any(fun(X) -> Key == X end, List).
 
-%% Corects time
+%% Corrects time
 correct_time({{Year, Month, Day}, {Hour, Minutes, Seconds}}) when Seconds > 60 ->
   AddMin = Seconds div 60,
   LeftSeconds = Seconds rem 60,
@@ -220,7 +220,7 @@ generate_uuid(Length) ->
 
 
 pagination(TotalItems, PerPage, PreUrl, CurrentPage) ->
-  windowed_paginator(mochidemo_util:ceiling(TotalItems/PerPage), PreUrl, CurrentPage).
+  windowed_paginator(web_util:ceiling(TotalItems / PerPage), PreUrl, CurrentPage).
 
 windowed_paginator(TotalPages, PreUrl, CurrentPage) ->
   InnerWindow = 4,

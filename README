@@ -3,3 +3,6 @@ web_util contains useful functions when dealing with web requests.
 It is a 'dummy' application in that it doesn't start any
 processes but instead simply provides a code library
 to use in your release.
+
+Depends upon:
+- adv_crypto

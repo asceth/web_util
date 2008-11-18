@@ -77,7 +77,7 @@ correct_time({{Year, Month, Day}, {Hour, Minutes, Seconds}}) ->
 
 %% @spec join([string()], Separator) -> string()
 %% @doc Join a list of terms together with the given separator
-%%      string or char.
+%%      string or char. (From mochiweb)
 join([], _Separator) ->
     [];
 join([S], _Separator) when is_binary(S) ->
@@ -94,9 +94,9 @@ revjoin([S | Rest], Separator, []) ->
 revjoin([S | Rest], Separator, Acc) ->
     revjoin(Rest, Separator, [term_to_list(S), Separator | Acc]).
 
-%% @spec join([string()], Separator) -> string()
+%% @spec quoted_join([string()], Separator) -> string()
 %% @doc Join a list of terms together with the given separator
-%%      string or char.
+%%      string or char and quote each term.
 quoted_join([], _Separator) ->
     [];
 quoted_join([S], _Separator) ->
